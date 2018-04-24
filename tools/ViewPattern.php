@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: tonypiton
- * Date: 04/02/2018
- * Time: 16:52
+ *
+ * Desc : HTML Template file
  */
 
  abstract class ViewPattern

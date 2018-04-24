@@ -2,7 +2,7 @@
 
 /** General config **/
 
-const _URL_ = "%%URL_ROOT%%";
+const _URL_ = "http://localhost/PHP_projectGenerator/";
 
 const _CONTROLLER_ = "Controller.php";
 

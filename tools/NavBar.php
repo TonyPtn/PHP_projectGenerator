@@ -9,6 +9,7 @@
 class NavBar
 {
     /**  Attributes **/
+    //Navbar html
     private $navBarHTML;
     private $navBarCSS;
 
@@ -23,7 +24,7 @@ class NavBar
         $disconnectForm = "<form method='post' action='%%HOME_PAGE%%'><button type='submit' name='disconnect' id='discoBtn'>".$logoutGlyph."</button></form>";
 
         //Create navbar text
-        $navText = BootstrapGenerator::genNavbarElement("%%PAGE_TITLE%%", 'text', null, "navText", null);
+        $navText = BootstrapGenerator::genNavbarElement("PHP Project Generator", 'text', null, "navText", null);
 
         /** Create navbar content div **/
         $col1div = BootstrapGenerator::genColDiv(null, "md-1", null, null, null);

@@ -21,7 +21,7 @@ $config = new Config();
 //Set default url
 if(!isset($_GET['url']))
 {
-    $_GET['url'] = "accueil";
+    $_GET['url'] = "home";
 }
 
 //Rpute GET request

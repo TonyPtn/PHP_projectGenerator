@@ -1,5 +1,13 @@
 <?php
+/**
+ * User: tonypiton
+ *
+ * Description : Class autoloading file
+ */
 
+/**
+ * @param string $class /Class name
+ */
 function __autoload_tools($class)
 {
     if(file_exists(_TOOLS_ . $class . ".php"))
@@ -8,6 +16,9 @@ function __autoload_tools($class)
     }
 }
 
+/**
+ * @param string $class /Class name
+ */
 function __autoload_classes($class)
 {
     if(file_exists(_CLASSES_ . $class . ".php"))
