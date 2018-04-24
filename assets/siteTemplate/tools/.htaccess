@@ -1,0 +1,4 @@
+<Files "db_credentials.txt">
+Order Allow,Deny
+Deny from all
+</Files>

@@ -62,19 +62,14 @@ class View extends ViewPattern
         //Create title row
         $formTitleRow = BootstrapGenerator::genRow($formTitle, null, null, null);
 
-        //Create download button
-        $downloadBtn = BootstrapGenerator::genButton('Télecharger l\'archive', 'submit', null, null, null);
+        /* Create fieldset */
+        $fieldset = $this->generateFieldset();
 
-        //Create form
-        $form = '<form method="POST" action="assets/siteTemplate.zip">
-                  '. $downloadBtn .'
-                </form>';
-
-        //Create form row
-        $formRow = BootstrapGenerator::genRow($form, null, null, null);
+        //Get form
+        $form = $this->generateForm();
 
         //Create container
-        $container = BootstrapGenerator::genContainer($titleRow . $formTitleRow . $formRow,false, null, null, null);
+        $container = BootstrapGenerator::genContainer($titleRow . $formTitleRow . $fieldsetRow . $formRow,false, null, null, null);
 
         //Return content container
         return $container;
@@ -85,9 +80,55 @@ class View extends ViewPattern
      */
     protected function setFooter()
     {
-      $formRow = "";
-
-        //return form
-        return $formRow;
+        return "";
     }
+
+    /**
+     * Generate fieldset
+     */
+     private function generateFieldset()
+     {
+       //Create project name input
+       $projectNameInput = '<label>Nom du projet : <input type="text" name="projectName" id="projectName"/></label>';
+       //Create project URL input
+       $projectURLRootInput = '<label>URL racine du projet : <input type="text" name="projectURLRoot" id="projectURLRoot"/></label>';
+
+       //Create fieldset
+       $fieldset = '<fieldset>
+                       <legend>
+                         Informations sur le projet
+                       </legend>
+                       ' . $projectNameInput . $projectURLRootInput . '
+                   </fieldset>';
+
+       //Create fieldset col div
+       $fieldsetColDiv = BootstrapGenerator::genColDiv($fieldset, "md-12", null, null, null);
+
+       //Create fieldset row
+       $fieldsetRow = BootstrapGenerator::genRow($fieldsetColDiv, null, null, null);
+
+       //Return fieldset row
+       return $fieldsetRow;
+     }
+
+    /**
+     * Generate form function
+     * @param string $content \form content
+     */
+     private function generateForm($content)
+     {
+       //Create download button
+       $downloadBtn = BootstrapGenerator::genButton('Récupérer le projet', 'submit', null, null, null);
+
+       //Create form
+       $form = '<form method="POST" action="">
+                 '. $content . $downloadBtn .'
+               </form>';
+
+       //Create form row
+       $formRow = BootstrapGenerator::genRow($form, null, null, null);
+
+       //Return form row
+       return $formRow;
+     }
 }

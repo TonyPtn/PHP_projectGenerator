@@ -1,8 +1,14 @@
 /* Align form content */
-form
+form, fieldset
 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Add margin between inputs */
+input
+{
+  margin: 1em 0;
 }
